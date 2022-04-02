@@ -1,0 +1,54 @@
+$lightblack: #1E1E1E;
+$deepblack: #121212;
+
+$lightwhite: #D9D5D2;
+$deepwhite: #F8F4F1;
+
+$lightred: #FE0000;
+$deepred: #A82300;
+
+$lightyellow: #F5F563;
+$deepyellow: #F7F700;
+
+$lightblue: #3742fa;
+$deepblue: #082284;
+
+$lightorange: #F6B51A;
+$deeporange: #EB6F23;
+
+$lightgreen: #6C9D2F;
+$deepgreen: #2F5E26;
+
+@mixin stickeyfooter {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@mixin text($color,$fontsize, $align){
+    color: $color;
+    font-size: $fontsize;
+    text-align: $align;
+}
+
+@mixin input($bg, $color, $width, $margin, $padding) {
+    color: $color;
+    background-color: $bg;
+    width: $width;
+    padding: $padding;
+    margin: $margin;
+    outline: none;
+}
+@mixin checkbox {
+    margin: 0px 10px 0 0px;
+}
+@mixin button($bg,$color,$width, $margin, $padding) {
+    outline: none;
+    border: none;
+    color: $color;
+    background-color: $bg;
+    width: $width;
+    padding: $padding;
+    margin: $margin;
+}
+

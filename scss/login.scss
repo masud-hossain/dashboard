@@ -1,0 +1,229 @@
+@import "./reset.scss";
+@import "./responsive.scss";
+@import "./app.scss";
+
+// Navbar Design\
+body{
+    overflow-x: hidden;
+  background-color: $deepwhite;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @include stickeyfooter();
+  header{
+      background-color: $lightblack;
+      nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        .logo{
+            color: $deepwhite;
+            letter-spacing: 3px;
+            font-size: 30px;
+            font-weight: 800;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-color: $deepblue;
+            -webkit-text-stroke-width: .4px;
+            text-shadow: 0px 0px 1px yellow;
+       }
+       .nav-links{
+            display: flex;
+            justify-content: space-around;
+            transition: transform 0.5s ease-in;
+            li{
+                list-style: none;
+                a{
+                    color: $deepwhite;
+                    text-decoration: none;
+                    letter-spacing: 3px;
+                    font-weight: bold;
+                    padding: 0px 15px;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .burger{
+            transition: .5s;
+            display: none;
+            cursor: pointer;
+            div{
+                width: 25px;
+                height: 3px;
+                margin: 4px;
+                background-color: $deepwhite;
+            }
+        }
+      }
+  }
+
+
+  section{
+    margin-bottom: 50px;
+    display: unset;
+    .left{
+        margin-top: 250px;
+        h2{
+            @include text($deepblack,60px,left);
+        }
+    }
+
+   .right{
+       margin-top: 100px;
+    h3{
+        @include text($deepblack,20px,center);
+        margin-bottom: 20px;
+    }
+    form{
+        padding: 40px 20px;
+        background: white;
+        box-shadow: 0px 0px 5px rgba(153, 153, 153, 0.486);
+        border-radius: 5px;
+        input[type=checkbox]{
+            @include checkbox();
+            margin-bottom: 20px
+        }
+        input[ type=email], input[ type=password],input[ type=text],{
+            border: 1px solid $deepblack;
+            @include input(white, #000, 100%, 0px 0px 15px 0px , 5px);
+            border-radius: 3px;
+        }
+        button{
+            @include button($lightblue, white, 100%, 5px 0px, 5px);
+            border-radius: 3px;
+        }
+        a{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            @include button($deepblack, $deepwhite, 100%, 15px 0px, 5px);
+            font-weight: 600;
+            border-radius: 3px;
+        }
+    }
+   }
+   
+}
+
+
+
+    footer{
+        margin-top: auto;
+        background-color: $deepblack;
+        .copyright{
+            @include text($deepwhite,14px, left);
+            padding: 10px;
+        }
+        .footer-menu{
+            display: flex;
+            justify-content: end;
+            a{
+                display: block;
+                color: $deepwhite;
+                padding: 10px;
+                &:hover{
+                    color: rgb(0, 255, 13);
+                }
+            }
+        }
+    }
+
+} 
+
+
+
+// Responisive
+@media (max-width: 736px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.849);
+        top: 44px;
+        display: block !important;
+        align-items: unset !important;
+        width: 60vw;
+        transform: translateX(100%);
+           li{
+               a{
+                   color: $deepwhite !important;
+                   display: block !important;
+                   margin-left: -40px;
+                   padding: 5px 10px !important;
+                   &:hover{
+                       background-color: $deepwhite;
+                       color: $deepblack !important;
+                       transition: .5s;
+                   }
+               }
+           }
+        }
+        .nav-active{
+            transform: translateX(0%);
+            transition: transform 0.5s ease-in;
+        }
+        .burger{
+            display: block !important;
+        }
+        .active-burger{
+            transform: rotate(90deg);
+            div{
+                background-color: $lightyellow !important;
+            }
+        }
+        .left{
+            h2{
+                font-size: 50px !important;
+            }
+        }
+        .right, .left{
+            margin-top: 20px !important;
+        }
+        .left{
+            h2{
+                font-size: 50px !important;
+              text-align: center !important;
+            }
+            p{
+                &::after{
+                    content: 'welcome to company';
+                    display: block;
+                    @include text($deepblack,20px, center);
+                }
+                strong{
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    
+    @media (max-width: 576px){
+        .logo{
+            h4{
+                font-size: 18px !important;
+            }
+        }
+        .left{
+            h2{
+                font-size: 40px !important;
+            }
+        }
+        .copyright{
+            padding: 10px;
+            strong{
+                text-align: center;
+                display: block;
+            }
+            span{
+                text-align: center;
+                display: block;
+            }
+        }
+        .footer-menu{
+            margin-top: -20px !important;
+            justify-content: center !important;
+        }
+    }
