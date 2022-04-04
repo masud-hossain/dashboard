@@ -25,6 +25,17 @@ $deepgreen: #2F5E26;
     min-height: 100vh;
 }
 
+
+@mixin burger ($bg){
+    cursor: pointer;
+    div{
+        width: 25px;
+        height: 3px;
+        margin: 4px;
+        background-color: $bg;
+    }
+}
+
 @mixin text($color,$fontsize, $align){
     color: $color;
     font-size: $fontsize;
