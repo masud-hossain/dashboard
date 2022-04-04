@@ -1,10 +1,11 @@
-/* Google Fonts Import Link */
+@import "./app.scss";
+@import "./responsive.scss";
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .sidebar{
   position: fixed;
@@ -12,7 +13,7 @@
   left: 0;
   height: 100%;
   width: 260px;
-  background: #11101d;
+  background-color: $deepblack;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -62,7 +63,7 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: $deepblack;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -106,7 +107,7 @@
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background: $lightblack;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -167,7 +168,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1d1b31;
+  background: $lightblack;
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -210,12 +211,13 @@
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: $lightwhite;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
 }
+
 .sidebar.close ~ .home-section{
   left: 78px;
   width: calc(100% - 78px);
@@ -224,10 +226,11 @@
   height: 60px;
   display: flex;
   align-items: center;
+  background-color: $deepwhite;
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
-  color: #11101d;
+  color: $deepblack;
   font-size: 35px;
 }
 .home-section .home-content .bx-menu{
@@ -241,5 +244,62 @@
 @media (max-width: 420px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;
+  }
+}
+
+.topmenu{
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  .topmenu-left{
+    ul{
+      list-style: none;
+      li{
+        float: left;
+        a{
+          font-size: 16px;
+          font-weight: 500;
+          display: block;
+          padding: 25px 15px;
+          text-decoration: none;
+          color: $lightblack;
+        }
+      }
+    }
+  }
+  .topmenu-right{
+    ul{
+      list-style: none;
+      li{
+        float: left;
+        a{
+          border-radius: 50%;
+          display: block;
+          font-size: 16px;
+          font-weight: 500;
+          padding: 25px 10px;
+          text-decoration: none;
+          color: $lightblack;
+          i{
+            font-size: 22px !important;
+            font-weight: 800 !important;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+@media (max-width: 576px){
+  .topmenu-left{
+    display: none !important;
+  }
+  .topmenu-right{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: end !important;
   }
 }

@@ -76,7 +76,7 @@ body{
             @include checkbox();
             margin-bottom: 20px
         }
-        input[ type=email], input[ type=password],input[ type=text],{
+        input[ type=email], input[ type=password],input[ type=text]{
             border: 1px solid $deepblack;
             @include input(white, #000, 100%, 0px 0px 15px 0px , 5px);
             border-radius: 3px;
